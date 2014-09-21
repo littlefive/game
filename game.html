@@ -1,0 +1,151 @@
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script type="text/javascript" src="jquery.js"></script>
+
+<style type="text/css">
+	div{
+display: inline-block;
+vertical-align: middle;
+}
+.clickCss{
+	font-size: 16px;
+	font-family: "Microsoft Yahei";
+	width: 200px;
+	height:150px;
+	background:url("460.gif") no-repeat;
+}
+*{
+		font-family: "Microsoft Yahei";
+		color: #15772C;
+}
+
+#b{
+float: right;
+width: 1130px;
+border: 2px solid black;
+}
+.show1{
+	background: url("heart.jpg") no-repeat;
+	background-position: 0px 0px;
+	width: 80px;
+	height: 80px;
+	border:2px solid #eee;
+}
+.show2{
+	background: url("heart.jpg") no-repeat;
+	background-position: -80px 0px;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+		background-color: transparent;
+}
+.show3{
+	background: url("heart.jpg") no-repeat;
+	background-position: -160px 0px;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+		background-color: transparent;
+}
+.show4{
+	background: url("heart.jpg") no-repeat;
+	background-position: -240px 0px;
+	background-color: transparent;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+}
+.show5{
+	background: url("heart.jpg") no-repeat;
+	background-position: -320px 0px;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+}
+.show6{
+	background: url("heart.jpg") no-repeat;
+	background-position: -480px 0px;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+}
+.show7{
+	background: url("heart.jpg") no-repeat;
+	background-position: -480px -89px;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+}
+.show8{
+	background: url("heart.jpg") no-repeat;
+	background-position: -480px -183px;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+}
+.show9{
+	background: url("heart.jpg") no-repeat;
+	background-position: -480px -271px;
+	width: 80px;
+	height: 80px;
+		border:2px solid #eee;
+}
+.show10{
+	background: url("heart.jpg") no-repeat;
+	background-position: -480px -364px;
+	width: 80px;
+	height: 80px;
+	border:2px solid #eee;
+}
+.btn{
+	width: 190px;
+	height: 190px;
+
+}
+.guees{
+	margin-top: 160px;
+	height: 180px;
+	width: 180px;
+}
+</style>
+	
+	</head>
+<body>
+	<div id="a" class="guees">
+	让我猜猜你想什么了？下面就是见证奇迹的时刻！！！！！
+	<button class="btn">测试</button>
+		<button class="reBtn">再来一次</button>
+	</div>
+	<div id="b"></div>
+</body>
+
+<script type="text/javascript">
+	pics=["show1","show2","show3","show4","show5","show6","show7","show8","show9","show10"];
+
+	s= pics[parseInt(Math.random(9)*10)];
+	var css='';
+for(i=0;i<100;i++){
+	console.log(css)
+	if(i%9==0){
+
+			css+='<div class="'+s+'"><span>'+i+'</span></div>'
+	}else{
+			css+='<div class="'+ pics[parseInt(Math.random(9)*10)]+'"><span>'+i+'</span></div>'
+		}
+	}
+
+$("#b").html(css);
+
+
+$(document).on('click','.btn',function(){
+		$('.btn').html('<div class="'+ s+'"></div>')
+		// location.reload()
+	})
+
+$(document).on('click','.reBtn',function(){
+	location.reload();
+})
+
+	</script>
+</html>
